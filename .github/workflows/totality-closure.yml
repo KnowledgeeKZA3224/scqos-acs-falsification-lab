@@ -1,0 +1,44 @@
+name: totality-closure
+
+on:
+  push:
+    paths:
+      - "scripts/run_totality_closure.py"
+      - "scripts/verify-everything.sh"
+      - "src/**"
+      - "tests/**"
+      - ".github/workflows/totality-closure.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  totality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Prepare lab
+        run: ./scripts/bootstrap.sh
+
+      - name: Execute local + live cloud falsification
+        run: ./scripts/verify-everything.sh
+
+      - name: Close totality circuit
+        run: python scripts/run_totality_closure.py
+
+      - name: Show human-readable closure
+        run: cat run-evidence/TOTALITY_CLOSURE_SUMMARY.md
+
+      - name: Upload complete evidence bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: totality-closure-evidence
+          path: run-evidence/
+          if-no-files-found: error
