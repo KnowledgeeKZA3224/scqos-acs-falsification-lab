@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "bytes": 13205,
+      "file": "agt-reference.json",
+      "sha256": "147f3441b8fc8a2095a3478e6313324a40864f8cf3ad6f808dda81203422b6ff"
+    },
+    {
+      "bytes": 191689,
+      "file": "agt-upstream-tests.txt",
+      "sha256": "828e57866710c82bc4c6c4ddaf05654ebef48890e5e25699275368a41abc9982"
+    },
+    {
+      "bytes": 8892,
+      "file": "cloud-to-terminal.json",
+      "sha256": "e934860fc7026e4a3a1134e882e3040d7e8b4a887aacb9ee5f04e9defc805b53"
+    },
+    {
+      "bytes": 5065,
+      "file": "differential.json",
+      "sha256": "cf9968028651280c0a39b3e603a8dbbc251234541e7b04cf2d56cf3e038d6bb9"
+    },
+    {
+      "bytes": 17935,
+      "file": "external-vectors-agt.json",
+      "sha256": "31ded01e0b5791eb0a66eea286d5920690f057ab65f95db13e811eae38ffb8af"
+    },
+    {
+      "bytes": 19246,
+      "file": "external-vectors-scqos.json",
+      "sha256": "802bbdcd37f8f5d76453781fd0a5a5577ba6bdbf8fabad59c36a21d1096e2bcd"
+    },
+    {
+      "bytes": 22051,
+      "file": "live-scqos.json",
+      "sha256": "c0fa6135615532cfa3dfcd298e42800bc437ab8a569f3e92c12eaf14886c296e"
+    }
+  ],
+  "schema": "scqos.acs.initial-evidence-manifest.v1"
+}
